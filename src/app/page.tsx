@@ -5,11 +5,6 @@ import {
   FileCode2, 
   Settings, 
   Code2,
-  Github,
-  Globe,
-  Mail,
-  Linkedin,
-  ExternalLink,
   Search,
   ScanSearch,
   Terminal,
@@ -17,6 +12,7 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import { Card } from "@/components/ui/card"
+import { FunDeveloperCard } from "@/components/fun-developer-card"
 
 export default function Home() {
   // Tool items data
@@ -166,7 +162,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Developer Information Section */}
+      {/* Developer Information Section - Redesigned with Fun Card */}
       <section id="developer-info" className="w-full py-12 md:py-16 bg-gradient-to-b from-background to-primary/5">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-6">
@@ -176,70 +172,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="max-w-3xl mx-auto bg-card rounded-2xl border shadow-md overflow-hidden">
-            <div className="flex flex-col md:flex-row">
-              {/* Developer Photo and Basic Info */}
-              <div className="bg-gradient-to-br from-primary to-secondary p-6 text-white flex flex-col items-center justify-center text-center md:w-1/3">
-                <div className="w-24 h-24 rounded-full bg-white/20 p-1 mb-3">
-                  <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                    <span className="text-3xl font-bold text-primary">NM</span>
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold">Nguyễn Nhật Minh</h3>
-                <p className="text-primary-foreground/90 mt-1 font-medium">Fullstack Developer</p>
-                <div className="flex justify-center space-x-2 mt-4">
-                  <Link href="https://github.com" target="_blank" rel="noopener noreferrer" 
-                    className="hover:bg-white/20 p-1.5 rounded-full transition-colors">
-                    <Github className="h-4 w-4" />
-                    <span className="sr-only">GitHub</span>
-                  </Link>
-                  <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                    className="hover:bg-white/20 p-1.5 rounded-full transition-colors">
-                    <Linkedin className="h-4 w-4" />
-                    <span className="sr-only">LinkedIn</span>
-                  </Link>
-                  <Link href="mailto:nhatminh@example.com"
-                    className="hover:bg-white/20 p-1.5 rounded-full transition-colors">
-                    <Mail className="h-4 w-4" />
-                    <span className="sr-only">Email</span>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Developer Details - Simplified */}
-              <div className="p-6 md:w-2/3">
-                <p className="text-muted-foreground mb-4">
-                  Senior Fullstack Developer với hơn 5 năm kinh nghiệm phát triển ứng dụng web hiệu suất cao.
-                  Chuyên môn về Next.js, React và Node.js. Tốt nghiệp Đại học Bách Khoa Hà Nội.
-                </p>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Next.js</span>
-                  <span className="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">React</span>
-                  <span className="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">TypeScript</span>
-                  <span className="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Node.js</span>
-                  <span className="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Tailwind CSS</span>
-                </div>
-                
-                <div className="border-t pt-4">
-                  <p className="text-muted-foreground italic text-sm">
-                    "DevToolsHub là dự án cá nhân của tôi nhằm cung cấp các công cụ hữu ích cho cộng đồng lập trình viên."
-                  </p>
-                  <div className="mt-3">
-                    <Link 
-                      href="https://nhatminh.dev" 
-                      className="text-primary flex items-center text-sm hover:underline" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
-                      Trang cá nhân
-                      <ExternalLink className="ml-1 h-3 w-3" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* New Fun Developer Card */}
+          <FunDeveloperCard />
         </div>
       </section>
     </>

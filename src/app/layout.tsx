@@ -11,8 +11,8 @@ const fontSans = FontSans({
 })
 
 export const metadata: Metadata = {
-  title: "Đại Việt Tool Pro | Công cụ cho Nhà phát triển Web",
-  description: "Bộ sưu tập các công cụ hữu ích cho nhà phát triển web",
+  title: "Đại Việt Tool Pro | Công cụ cho người Việt",
+  description: "Bộ sưu tập các công cụ hữu ích cho người Việt với công nghệ hiện đại vượt thời gian và không gian",
 }
 
 export default function RootLayout({
