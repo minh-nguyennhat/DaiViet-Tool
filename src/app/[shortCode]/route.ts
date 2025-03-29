@@ -4,11 +4,12 @@ import { NextRequest, NextResponse } from 'next/server'
 // Initialize Upstash Redis client
 const redis = Redis.fromEnv()
 
+// Corrected function signature for Next.js 15 route handlers
 export async function GET(
   request: NextRequest,
-  { params }: { params: { shortCode: string } }
+  context: { params: Promise<{ shortCode: string }> }
 ) {
-  const shortCode = params.shortCode
+  const { shortCode } = await context.params
   
   if (!shortCode) {
     return NextResponse.redirect(new URL('/', request.url))
@@ -20,8 +21,8 @@ export async function GET(
   const originalUrl = await redis.get<string>(urlKey)
   
   if (!originalUrl) {
-    // Nếu không tìm thấy URL, chuyển hướng về trang chủ với thông báo lỗi
-    return NextResponse.redirect(new URL('/?error=not-found', request.url))
+    // Nếu không tìm thấy URL, chuyển hướng về trang not-found
+    return NextResponse.redirect(new URL('/not-found', request.url))
   }
   
   // Tăng số lượt truy cập
@@ -32,5 +33,5 @@ export async function GET(
   await redis.expire(statsKey, 60 * 60 * 24 * 30) // 30 days
   
   // Chuyển hướng đến URL đích với mã trạng thái 307 (Temporary Redirect)
-  return NextResponse.redirect(originalUrl, { status: 307 })
+  return NextResponse.redirect(originalUrl, 307)
 }
