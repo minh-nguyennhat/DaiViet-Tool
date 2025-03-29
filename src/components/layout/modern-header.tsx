@@ -175,7 +175,7 @@ export function ModernHeader() {
             <AnimatedFlag />
             
             <div className="flex items-center">
-              <h1 className="relative text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-900 animate-pulse">
+              <h1 className="relative text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 animate-pulse">
                 Đại Việt Tool
                 <ProBadge className="absolute -top-2 -right-12" />
               </h1>
