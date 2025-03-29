@@ -25,7 +25,7 @@ export default function Home() {
       href: "/short-url",
       color: "from-blue-500/20 to-cyan-400/20",
       iconColor: "text-blue-500",
-      disabled: true,
+      disabled: false, // Updated to false since we've implemented this feature
     },
     {
       id: "2fa",
